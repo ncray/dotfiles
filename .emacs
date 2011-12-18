@@ -16,6 +16,11 @@
 (autoload 'python-mode "python-mode.el" "Python mode." t)
 (setq auto-mode-alist (append '(("/*.\.py$" . python-mode)) auto-mode-alist))
 
+(require 'coffee-mode)
+(add-to-list 'auto-mode-alist '("\.coffee$" . coffee-mode))
+(add-to-list 'auto-mode-alist '("Cakefile" . coffee-mode))
+
+(setq default-tab-width 2)
 
 ;(require 'w3m-load)
 
