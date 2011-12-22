@@ -22,6 +22,12 @@
 
 (setq default-tab-width 2)
 
+(add-to-list 'load-path "~/jade-mode")
+(require 'sws-mode)
+(require 'jade-mode)    
+(add-to-list 'auto-mode-alist '("\\.styl$" . sws-mode))
+(add-to-list 'auto-mode-alist '("\\.jade$" . jade-mode))
+
 ;(require 'w3m-load)
 
 (require 'ido)

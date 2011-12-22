@@ -50,6 +50,7 @@ alias e='emacs -nw --no-init-file'
 #export PS1='%m%#'
 #export PS1='%~%#'
 
+export NODE_PATH=/usr/lib/
 export EDITOR='emacs -nw --no-init-file'
 export BROWSER='chromium'
 
