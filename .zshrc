@@ -6,6 +6,7 @@ ZSH=$HOME/.oh-my-zsh
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
 ZSH_THEME="robbyrussell"
+# "robbyrussell"
 
 # Set to this to use case-sensitive completion
 # CASE_SENSITIVE="true"
@@ -43,7 +44,8 @@ autoload -Uz compinit
 compinit
 # End of lines added by compinstall
 
-alias e='emacs -nw --no-init-file'
+alias e='/Applications/Emacs.app/Contents/MacOS/Emacs'
+alias ec='/Applications/Emacs.app/Contents/MacOS/Emacs -nw --no-init-file'
 
 #eval `dircolors -b`
 
