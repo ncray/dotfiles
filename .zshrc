@@ -12,7 +12,7 @@ ZSH_THEME="robbyrussell"
 # CASE_SENSITIVE="true"
 
 # Comment this out to disable weekly auto-update checks
-# DISABLE_AUTO_UPDATE="true"
+DISABLE_AUTO_UPDATE="true"
 
 # Uncomment following line if you want to disable colors in ls
 # DISABLE_LS_COLORS="true"
@@ -32,8 +32,8 @@ source $ZSH/oh-my-zsh.sh
 # Customize to your needs...
 # Lines configured by zsh-newuser-install
 HISTFILE=~/.histfile
-HISTSIZE=10000
-SAVEHIST=10000
+HISTSIZE=50000
+SAVEHIST=50000
 setopt appendhistory autocd beep extendedglob nomatch notify
 bindkey -e
 # End of lines configured by zsh-newuser-install
@@ -45,16 +45,18 @@ compinit
 # End of lines added by compinstall
 
 alias e='/Applications/Emacs.app/Contents/MacOS/Emacs'
-alias ec='/Applications/Emacs.app/Contents/MacOS/Emacs -nw --no-init-file'
+alias ec='/Applications/Emacs.app/Contents/MacOS/Emacs -nw'
+alias ecn='/Applications/Emacs.app/Contents/MacOS/Emacs -nw --no-init-file'
 
 #eval `dircolors -b`
 
 #export PS1='%m%#'
 #export PS1='%~%#'
 
-export NODE_PATH=/usr/lib/
+#export NODE_PATH=/usr/lib/
 export EDITOR='emacs -nw --no-init-file'
 export BROWSER='chromium'
+export MAVEN_OPTS='-Xmx1g'
 
 x () {
   if [ -f $1 ] ; then
