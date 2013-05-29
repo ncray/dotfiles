@@ -32,8 +32,10 @@ source $ZSH/oh-my-zsh.sh
 # Customize to your needs...
 # Lines configured by zsh-newuser-install
 HISTFILE=~/.histfile
-HISTSIZE=50000
-SAVEHIST=50000
+HISTSIZE=100000
+SAVEHIST=100000
+setopt SHARE_HISTORY        # Share history across sessions
+setopt HIST_IGNORE_SPACE    # commands starting w/ a space don't go into history
 setopt appendhistory autocd beep extendedglob nomatch notify
 bindkey -e
 # End of lines configured by zsh-newuser-install
@@ -44,9 +46,14 @@ autoload -Uz compinit
 compinit
 # End of lines added by compinstall
 
+alias curl='nocorrect curl'
+alias cp='nocorrect cp'
+alias pig='nocorrect pig'
 alias e='/Applications/Emacs.app/Contents/MacOS/Emacs'
 alias ec='/Applications/Emacs.app/Contents/MacOS/Emacs -nw'
 alias ecn='/Applications/Emacs.app/Contents/MacOS/Emacs -nw --no-init-file'
+alias grep='/usr/local/Cellar/grep/2.14/bin/grep'
+alias egrep='/usr/local/Cellar/grep/2.14/bin/egrep'
 
 #eval `dircolors -b`
 
@@ -57,6 +64,13 @@ alias ecn='/Applications/Emacs.app/Contents/MacOS/Emacs -nw --no-init-file'
 export EDITOR='emacs -nw --no-init-file'
 export BROWSER='chromium'
 export MAVEN_OPTS='-Xmx1g'
+export EC2_HOME=~/.ec2
+export EC2_PRIVATE_KEY=$EC2_HOME/pk-3L77E6VTQQXY5VLFZL7NB5MJY36UQ6K2.pem
+export EC2_CERT=$EC2_HOME/cert-3L77E6VTQQXY5VLFZL7NB5MJY36UQ6K2.pem
+##for pig
+export JAVA_HOME="$(/usr/libexec/java_home)"
+
+export PATH="$HOME/unix-common/bin:$HOME/vowpal_wabbit/vowpalwabbit:$HOME/vowpal_wabbit/utl:$EC2_HOME/bin:$PATH"
 
 x () {
   if [ -f $1 ] ; then
