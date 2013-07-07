@@ -1,3 +1,6 @@
+;; automatically follow symlinks
+(setq vc-follow-symlinks t)
+
 ;; ESS Section
 (require 'ess-site)
 (setq ess-eval-visibly-p nil) ;otherwise C-c C-r (eval region) takes forever
@@ -50,3 +53,12 @@
 
 ;; (setq slime-find-buffer-package-function 'find-mit-scheme-package)
 ;; (add-hook 'scheme-mode-hook (lambda () (slime-mode 1)))
+
+;; load the ensime lisp code...
+(add-to-list 'load-path "/Users/ncray/ensime_2.9.2-0.9.8.9/elisp/")
+(require 'ensime)
+
+;; This step causes the ensime-mode to be started whenever
+;; scala-mode is started for a buffer. You may have to customize this step
+;; if you're not using the standard scala mode.
+(add-hook 'scala-mode-hook 'ensime-scala-mode-hook)

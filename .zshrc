@@ -5,7 +5,7 @@ ZSH=$HOME/.oh-my-zsh
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-ZSH_THEME="robbyrussell"
+ZSH_THEME="gianu"
 # "robbyrussell"
 
 # Set to this to use case-sensitive completion
@@ -36,6 +36,7 @@ HISTSIZE=100000
 SAVEHIST=100000
 setopt SHARE_HISTORY        # Share history across sessions
 setopt HIST_IGNORE_SPACE    # commands starting w/ a space don't go into history
+setopt print_exit_value
 setopt appendhistory autocd beep extendedglob nomatch notify
 bindkey -e
 # End of lines configured by zsh-newuser-install
@@ -49,11 +50,10 @@ compinit
 alias curl='nocorrect curl'
 alias cp='nocorrect cp'
 alias pig='nocorrect pig'
+alias mosh='nocorrect mosh'
 alias e='/Applications/Emacs.app/Contents/MacOS/Emacs'
 alias ec='/Applications/Emacs.app/Contents/MacOS/Emacs -nw'
 alias ecn='/Applications/Emacs.app/Contents/MacOS/Emacs -nw --no-init-file'
-alias grep='/usr/local/Cellar/grep/2.14/bin/grep'
-alias egrep='/usr/local/Cellar/grep/2.14/bin/egrep'
 
 #eval `dircolors -b`
 
@@ -70,7 +70,7 @@ export EC2_CERT=$EC2_HOME/cert-3L77E6VTQQXY5VLFZL7NB5MJY36UQ6K2.pem
 ##for pig
 export JAVA_HOME="$(/usr/libexec/java_home)"
 
-export PATH="$HOME/unix-common/bin:$HOME/vowpal_wabbit/vowpalwabbit:$HOME/vowpal_wabbit/utl:$EC2_HOME/bin:$PATH"
+export PATH="/usr/local/bin:$PATH:$HOME/unix-common/bin:$HOME/vowpal_wabbit/vowpalwabbit:$HOME/vowpal_wabbit/utl:$EC2_HOME/bin:/Applications/Julia.app/Contents/Resources/julia/bin"
 
 x () {
   if [ -f $1 ] ; then
