@@ -11,8 +11,8 @@
 (ac-config-default)
 (add-to-list 'ac-dictionary-directories "/Users/ncray/.emacs.d/elpa/auto-complete-20130209.651/dict/")
 (global-auto-complete-mode t)
-;; Show 0.8 second later
 (setq ac-auto-show-menu 0.3)
+(setq ac-delay 0.3)
 (provide 'auto-complete-settings)
 
 (setq scheme-program-name
@@ -55,10 +55,14 @@
 ;; (add-hook 'scheme-mode-hook (lambda () (slime-mode 1)))
 
 ;; load the ensime lisp code...
-(add-to-list 'load-path "/Users/ncray/ensime_2.9.2-0.9.8.9/elisp/")
-(require 'ensime)
+;; (add-to-list 'load-path "/Users/ncray/ensime_2.9.2-0.9.8.9/elisp/")
+;; (require 'ensime)
 
 ;; This step causes the ensime-mode to be started whenever
 ;; scala-mode is started for a buffer. You may have to customize this step
 ;; if you're not using the standard scala mode.
 (add-hook 'scala-mode-hook 'ensime-scala-mode-hook)
+
+(add-hook 'python-mode-hook 'jedi:setup)
+(setq jedi:setup-keys t)                      ; optional
+(setq jedi:complete-on-dot t)                 ; optional

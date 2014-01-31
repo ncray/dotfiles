@@ -51,10 +51,11 @@ alias curl='nocorrect curl'
 alias cp='nocorrect cp'
 alias pig='nocorrect pig'
 alias mosh='nocorrect mosh'
+alias aws='nocorrect aws'
 alias e='/Applications/Emacs.app/Contents/MacOS/Emacs'
 alias ec='/Applications/Emacs.app/Contents/MacOS/Emacs -nw'
 alias ecn='/Applications/Emacs.app/Contents/MacOS/Emacs -nw --no-init-file'
-
+alias dateiso='perl -MPOSIX -le'"'"'print strftime("%Y-%m-%dT%H:%M:%S", gmtime(time)) . "Z";'"'"''
 #eval `dircolors -b`
 
 #export PS1='%m%#'
