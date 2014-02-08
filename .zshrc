@@ -49,13 +49,11 @@ compinit
 
 alias curl='nocorrect curl'
 alias cp='nocorrect cp'
-alias pig='nocorrect pig'
 alias mosh='nocorrect mosh'
-alias aws='nocorrect aws'
-alias e='/Applications/Emacs.app/Contents/MacOS/Emacs'
-alias ec='/Applications/Emacs.app/Contents/MacOS/Emacs -nw'
-alias ecn='/Applications/Emacs.app/Contents/MacOS/Emacs -nw --no-init-file'
-alias dateiso='perl -MPOSIX -le'"'"'print strftime("%Y-%m-%dT%H:%M:%S", gmtime(time)) . "Z";'"'"''
+alias e='/usr/local/Cellar/emacs/24.3/Emacs.app/Contents/MacOS/Emacs'
+alias ec='/usr/local/Cellar/emacs/24.3/Emacs.app/Contents/MacOS/Emacs -nw'
+alias ecn='/usr/local/Cellar/emacs/24.3/Emacs.app/Contents/MacOS/Emacs -nw --no-init-file'
+
 #eval `dircolors -b`
 
 #export PS1='%m%#'
@@ -63,15 +61,8 @@ alias dateiso='perl -MPOSIX -le'"'"'print strftime("%Y-%m-%dT%H:%M:%S", gmtime(t
 
 #export NODE_PATH=/usr/lib/
 export EDITOR='emacs -nw --no-init-file'
-export BROWSER='chromium'
-export MAVEN_OPTS='-Xmx1g'
-export EC2_HOME=~/.ec2
-export EC2_PRIVATE_KEY=$EC2_HOME/pk-3L77E6VTQQXY5VLFZL7NB5MJY36UQ6K2.pem
-export EC2_CERT=$EC2_HOME/cert-3L77E6VTQQXY5VLFZL7NB5MJY36UQ6K2.pem
-##for pig
-export JAVA_HOME="$(/usr/libexec/java_home)"
 
-export PATH="/usr/local/bin:$PATH:$HOME/unix-common/bin:$HOME/vowpal_wabbit/vowpalwabbit:$HOME/vowpal_wabbit/utl:$EC2_HOME/bin:/Applications/Julia.app/Contents/Resources/julia/bin"
+export PATH="/usr/local/bin:$PATH:/Applications/Julia.app/Contents/Resources/julia/bin"
 
 x () {
   if [ -f $1 ] ; then
